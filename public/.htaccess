@@ -9,6 +9,11 @@ RewriteRule ^ - [L]
 # --------------------------------------------
 # RÈGLES DE RÉ-ÉCRITURE
 
+# ROUTE POSTS.SHOW
+# PATTERN: /posts/id/slug
+# URL: ?posts=show&id=x
+RewriteRule ^posts\/([1-9][0-9]*)\/[a-z0-9]([a-z0-9\-]*[a-z0-9])*$ ?posts=show&id=$1 [L]
+
 # --------------------------------------------
 # FALLBACK
 # Toute autre URL non prise en charge par une route ci-dessus part vers le front controller
